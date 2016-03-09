@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="bower_components/angular/angular.js"></script>
+</head>
+<body>
+
+  <div ng-init="points=[1,15,19,2,40]; firstName='John';lastName='Doe';person={firstName:'John',lastName:'Doe'}">
+  <p>Nothing here {{'yet' + '!'}}</p>
+  <p>1 + 2 = {{1+2}}</p>
+  Your name: <input type="text" ng-model="yourname" placeholder="World">
+  <hr>
+  Hello {{yourname || 'World'}}!
+<p>The third result is {{ points[2] }}</p>
+<p>The full name is: {{ firstName + " " + lastName }}</p>
+<p>The name is {{ person.lastName }}</p>
+  <table>
+    <tr><th>row number</th></tr>
+    <tr ng-repeat="i in [0, 1, 2, 3, 4, 5, 6, 7]"><td>{{i}}</td></tr>
+  </table>
+</div>
+
+</body>
+</html>
