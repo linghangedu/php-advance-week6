@@ -1,0 +1,37 @@
+<!doctype html>
+<html ng-app="phonecatApp">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="http://code.angularjs.org/angular-1.0.1.min.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+
+<body ng-controller="PhoneListCtrl">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <!--Sidebar content-->
+        Search: <input ng-model="query">
+        Sort by:
+        <select ng-model="orderProp">
+          <option value="name">Alphabetical</option>
+          <option value="age">Newest</option>
+        </select>
+        <p>result for: {{query}}</p>
+      </div>
+      <div class="col-md-10">
+        <!--Body content-->
+        <p>Total number of phones: {{phones.length}}</p>
+
+        <ul class="phones">
+          <li ng-repeat="phone in phones | filter:query | orderBy: orderProp">
+            <span>{{phone.name}}</span>
+            <p>{{phone.snippet}}</p>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
