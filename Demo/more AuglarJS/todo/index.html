@@ -8,8 +8,8 @@
  <div class="todo-wrapper" ng-controller="TodoCtrl">
     <h2>You've got <span class="emphasis">{{getTotalTodos()}}</span> things to do</h2>
     <ul>
-      <li ng-repeat="todo in todos">
-        <input type="checkbox" ng-model="todo.done" />
+      <li ng-repeat="todo in todos | orderBy: text">
+        <input type="checkbox" ng-model="todo.done" name="content"/>
         <span class="done-{{todo.done}}">{{todo.text}}</span>
       </li>
     </ul>
